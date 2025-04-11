@@ -6,6 +6,8 @@ import '../providers/theme_provider.dart';
 import '../widgets/note_card.dart';
 
 class NotesPage extends ConsumerWidget {
+  const NotesPage({super.key});
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final searchQuery = ref.watch(searchQueryProvider);

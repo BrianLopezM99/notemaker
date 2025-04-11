@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:notemaker/screens/notes_page.dart';
-import '../providers/note_provider.dart';
-import 'note_editor_screen.dart';
 import 'ai_tools_screen.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _HomeScreenState createState() => _HomeScreenState();
 }
 
@@ -17,7 +16,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
   // Control de las pantallas según la pestaña
   final List<Widget> _pages = [
-    NotesPage(), // Aquí vamos a mostrar las notas
+    const NotesPage(), // Aquí vamos a mostrar las notas
     const AIToolsScreen(), // IA
   ];
 

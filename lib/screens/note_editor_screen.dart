@@ -9,7 +9,7 @@ class NoteEditorScreen extends ConsumerWidget {
   final Note? note;
 
   // Constructor para aceptar una nota opcional (cuando se edita)
-  NoteEditorScreen({Key? key, this.note}) : super(key: key);
+  NoteEditorScreen({super.key, this.note});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -27,13 +27,13 @@ class NoteEditorScreen extends ConsumerWidget {
           children: [
             TextField(
               controller: titleController,
-              decoration: InputDecoration(hintText: 'Título'),
+              decoration: const InputDecoration(hintText: 'Título'),
             ),
             const SizedBox(height: 16),
             TextField(
               controller: contentController,
               maxLines: null,
-              decoration: InputDecoration(hintText: 'Contenido'),
+              decoration: const InputDecoration(hintText: 'Contenido'),
             ),
             const SizedBox(height: 16),
             ElevatedButton(
@@ -56,6 +56,7 @@ class NoteEditorScreen extends ConsumerWidget {
                         date: DateTime.now().toIso8601String(),
                       ));
                 }
+                // ignore: use_build_context_synchronously
                 Navigator.pop(context); // Regresar a la pantalla anterior
               },
               child: Text(note != null ? 'Actualizar' : 'Guardar'),
